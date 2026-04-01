@@ -1,2 +1,52 @@
-# assessment-of-driving-environment-quality
-This project proposes a GeoAI-based framework for assessing urban street environments using street view imagery and deep learning. The study integrates semantic segmentation and scene classification within a SegFormer-based multi-task learning model to extract visual information from SVI and evaluate the perceived driving environment quality.
+# Singapore Street-View Inference with SegFormer Multi-Task V2
+
+This script `predict_singapore_multitask_v2.py` applies the trained **SegFormer Multi-Task V2** model to a new image dataset, such as Singapore street view imagery from driver perspective.
+
+It predicts:
+
+1. **Semantic segmentation**
+   - road
+   - sidewalk
+   - building
+   - vegetation
+   - sky
+   - vehicles
+   - pedestrians
+   - and other Cityscapes-style classes
+
+2. **Image-level visual driving-environment quality**
+   - `low`
+   - `moderate`
+   - `high`
+
+It also saves:
+- raw segmentation masks
+- colorized segmentation masks
+- overlay images
+- a CSV summary containing scene-quality probabilities and class proportions
+
+---
+
+## 1. Files required before running
+
+Before running the script, make sure the following files are prepared.
+
+### Required files
+
+- `predict_singapore_multitask_v2.py`
+- trained checkpoint file, for example:
+  - `segformer_multitask_quality_best_v2.pth`
+- a folder containing input images, for example:
+  - `singapore_images/`
+
+### Example structure
+
+```text
+project_folder/
+├── predict_singapore_multitask_v2.py
+├── segformer_multitask_quality_best_v2.pth
+└── singapore_images/
+    ├── img_001.jpg
+    ├── img_002.jpg
+    ├── img_003.png
+    └── ...
