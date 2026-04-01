@@ -66,7 +66,8 @@ conda activate geoai
 
 **Install required packages**
 
-```bash
+```
+</> Bash
 pip install torch torchvision torchaudio
 pip install transformers
 pip install pillow numpy
@@ -109,6 +110,7 @@ However, is the aspect ratio is very different from the training images, the pre
 **Example command**
 
 ```bash
+</> Bash
 python predict_singapore_multitask_v2.py \
     --input_dir singapore_images \
     --output_dir singapore_predictions \
