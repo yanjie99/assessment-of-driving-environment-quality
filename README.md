@@ -58,7 +58,7 @@ Python `3.10`
 
 **Create a conda environment**
 
-```bash
+```</> Bash
 conda create -n geoai python=3.10 -y
 conda activate geoai
 ```
