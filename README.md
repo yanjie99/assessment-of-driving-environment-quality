@@ -194,4 +194,6 @@ The segmentation mask uses the following class IDs:
 | 18 | bicycle       |
 ```
 
+## Acknowledgement
 
+This project was developed for research purpose in NUS course [GE5231](https://nusmods.com/courses/GE5231/geospatial-machine-learning-and-artificial-intelligence). The author would like to acknowledge the open-source community, including PyTorch, Hugging Face Transformers, Cityscapes Dataset, Mapillary, OpenStreetMap, and various Python geospatial libraries, whose tools and data made this project possible.
