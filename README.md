@@ -57,7 +57,30 @@ project_folder/
 Python `3.10`
 
 **Create a conda environment**
+
 ```bash
 conda create -n geoai python=3.10 -y
 conda activate geoai
 ```
+
+**Install required packages**
+
+```bash
+pip install torch torchvision torchaudio
+pip install transformers
+pip install pillow numpy
+```
+
+## GPU/CPU note
+
+The script can run on:
+- GPU if CUDA is available
+- CPU otherwise
+
+GPU is recommended because inference will be much faster.
+
+The script automatically detects the device with
+```python
+torch.device("cuda" if torch.cuda.is_available() else "cpu")
+```
+
