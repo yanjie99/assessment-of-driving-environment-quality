@@ -50,6 +50,7 @@ project_folder/
     ├── xxx.jpg
     ├── xxx.png
     └── ...
+```
 
 ## Environment setup
 
