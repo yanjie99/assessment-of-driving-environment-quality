@@ -89,8 +89,8 @@ torch.device("cuda" if torch.cuda.is_available() else "cpu")
 The input folder can contain common image formats:
 - `.png`
 - `.jpg`
-- '.jpeg`
-- '.bmp`
+- `.jpeg`
+- `.bmp`
 - `.webp`
 
 **Image size**
@@ -114,6 +114,81 @@ python predict_singapore_multitask_v2.py \
     --checkpoint segformer_multitask_quality_best_v2.pth \
     --img_h 512 \
     --img_w 1024
+```
+
+## Expected outputs
+
+The script creates the following folders automatically:
+
+```
+singapore_predictions/
+├── pred_masks_raw/
+├── pred_masks_color/
+├── pred_overlays/
+└── prediction_summary.csv
+```
+
+`pred_masks_raw/` contains raw segmentation masks.
+
+- each pixel value is the predicted class ID
+- useful for later analysis
+
+`pred_masks_color/` contains colorized segmentation masks.
+
+- useful for quick visualization
+
+`pred_overlays/` contains overlay images.
+
+- segmentation mask blended with the RGB image.
+
+`prediction_summary.csv` contains one row per image with:
+
+- image name
+- predicted scene quality class
+- propabilities for low/moderate/high quality
+- class proportions from segmentation output
+
+*This CSV is especially useful for later spatial analysis*
+
+## Meaning of the classification labels
+
+The script predicts one of three image-level classes: `0 low` `1 moderate` `2 high`.
+These labels represent visual driving-environment quality proxies derived from the training design.
+
+**Interpretation**
+
+- low quality: visually harsher, less green, more crowded/complex road-user environment
+- moderate quality: balanced condition
+- high: greener, calmer, less visually complex
+
+**These labels are model-derived visual proxies, not directly safety ratings or official road quality assessments.**
+
+## Segmentation class mapping
+
+The segmentation mask uses the following class IDs:
+
+```
+| ID | Label         |
+| -: | ------------- |
+|  0 | road          |
+|  1 | sidewalk      |
+|  2 | building      |
+|  3 | wall          |
+|  4 | fence         |
+|  5 | pole          |
+|  6 | traffic light |
+|  7 | traffic sign  |
+|  8 | vegetation    |
+|  9 | terrain       |
+| 10 | sky           |
+| 11 | person        |
+| 12 | rider         |
+| 13 | car           |
+| 14 | truck         |
+| 15 | bus           |
+| 16 | train         |
+| 17 | motorcycle    |
+| 18 | bicycle       |
 ```
 
 
