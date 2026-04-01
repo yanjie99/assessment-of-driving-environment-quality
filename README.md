@@ -84,3 +84,36 @@ The script automatically detects the device with
 torch.device("cuda" if torch.cuda.is_available() else "cpu")
 ```
 
+## Input image requirements
+
+The input folder can contain common image formats:
+- `.png`
+- `.jpg`
+- '.jpeg`
+- '.bmp`
+- `.webp`
+
+**Image size**
+
+The original image size does not need to `512x1024`.
+
+The script will resize each image to the specified inference size, by default:
+- height=`512`
+- width=`1024`
+
+However, is the aspect ratio is very different from the training images, the prediction quality may drop.
+
+## How to run the script
+
+**Example command**
+
+```bash
+python predict_singapore_multitask_v2.py \
+    --input_dir singapore_images \
+    --output_dir singapore_predictions \
+    --checkpoint segformer_multitask_quality_best_v2.pth \
+    --img_h 512 \
+    --img_w 1024
+```
+
+
