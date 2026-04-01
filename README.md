@@ -27,7 +27,7 @@ It also saves:
 
 ---
 
-## 1. Files required before running
+## Files required before running
 
 Before running the script, make sure the following files are prepared.
 
@@ -46,7 +46,17 @@ project_folder/
 ├── predict_singapore_multitask_v2.py
 ├── segformer_multitask_quality_best_v2.pth
 └── singapore_images/
-    ├── img_001.jpg
-    ├── img_002.jpg
-    ├── img_003.png
+    ├── xxx.jpg
+    ├── xxx.jpg
+    ├── xxx.png
     └── ...
+
+## Environment setup
+
+Python `3.10`
+
+**Create a conda environment**
+```bash
+conda create -n geoai python=3.10 -y
+conda activate geoai
+```
