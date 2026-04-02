@@ -172,7 +172,6 @@ The segmentation mask uses the following class IDs:
 
 ```
 | ID | Label         |
-| -: | ------------- |
 |  0 | road          |
 |  1 | sidewalk      |
 |  2 | building      |
@@ -197,3 +196,6 @@ The segmentation mask uses the following class IDs:
 ## Acknowledgement
 
 This project was developed for research purpose in NUS course [GE5231](https://nusmods.com/courses/GE5231/geospatial-machine-learning-and-artificial-intelligence). The author would like to acknowledge the open-source community, including PyTorch, Hugging Face Transformers, Cityscapes Dataset, Mapillary, OpenStreetMap, and various Python geospatial libraries, whose tools and data made this project possible.
+
+## References
+Xie, E., Wang, W., Yu, Z., Anandkumar, A., Alvarez, J. M., & Luo, P. (2021). [SegFormer: Simple and efficient design for semantic segmentation with transformers](https://arxiv.org/abs/2105.15203). In Advances in Neural Information Processing Systems (NeurIPS) (Vol. 34, pp. 12077–12090).
